@@ -1,0 +1,4 @@
+backup/
+env/
+variables.env
+__pycache__/
