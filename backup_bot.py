@@ -14,7 +14,11 @@ class BackupBot:
     def __init__(self, reddit, subreddit):
         self.reddit = reddit
         self.subreddit = reddit.subreddit(subreddit)
-        self.logger = slack_logger.initialize('backup_bot')
+        self.logger = slack_logger.initialize(
+            app_name = 'backup_bot',
+            stream_loglevel = 'INFO',
+            slack_loglevel = 'CRITICAL',
+        )
         self.logger.info('Backup bot is online')
 
     def get_bans(self):
